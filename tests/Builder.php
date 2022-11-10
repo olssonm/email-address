@@ -52,6 +52,17 @@ it('can build from an complete address and change tag', function () {
     expect($address->tag)->toBe('abc123');
 });
 
+it('can build from local part and change tag', function () {
+    $address = EmailAddress::build()
+        ->local('test+tag')
+        ->domain('example.com')
+        ->tag('abc123')
+        ->get();
+
+    expect($address->address)->toBe('test+abc123@example.com');
+    expect($address->tag)->toBe('abc123');
+});
+
 it('can build from an complete address and remove tag', function () {
     $address = EmailAddress::build()
         ->address('test+tag@example.com')

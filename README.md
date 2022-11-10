@@ -1,4 +1,4 @@
-# Email address parser and builder
+# Email address-parser and -builder
 
 Simple package where you can parse out all the parts of an email adress. Among the use cases is the retrieval of the actual delivery-address for a subaddress (i.e. "plus addressing", "tagged addressing" etc.).
 

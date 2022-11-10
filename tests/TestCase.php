@@ -10,11 +10,4 @@ abstract class TestCase extends FrameworkTestCase
     {
         parent::setUp();
     }
-
-    // protected function getPackageProviders($app)
-    // {
-    //     return [
-    //         SwishServiceProvider::class
-    //     ];
-    // }
 }
