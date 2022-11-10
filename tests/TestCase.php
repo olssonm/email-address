@@ -2,10 +2,9 @@
 
 namespace Olssonm\EmailAddress\Test;
 
-use Olssonm\Swish\Providers\SwishServiceProvider;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
+use PHPUnit\Framework\TestCase as FrameworkTestCase;
 
-abstract class TestCase extends OrchestraTestCase
+abstract class TestCase extends FrameworkTestCase
 {
     protected function setUp(): void
     {
