@@ -4,7 +4,11 @@ Simple package where you can parse out all the parts of an email adress. Among t
 
 Available is also an email address builder to construct an address based on parts – as well as a simple validator (using [egulias/email-validator](https://github.com/egulias/EmailValidator).)
 
-*Note:* Currently only subaddresses with `+` is supported, which is used by a vast majority of e-mail providers that support subaddressing.
+*Note: Currently only subaddresses with `+` is supported, which is used by a vast majority of e-mail providers that support subaddressing.*
+
+## Requirements
+
+This package requires PHP 8.1 or newer.
 
 ## Installation
 
