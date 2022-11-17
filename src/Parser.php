@@ -2,7 +2,9 @@
 
 namespace Olssonm\EmailAddress;
 
-use Email\Parse;
+use Egulias\EmailValidator\EmailLexer;
+use Egulias\EmailValidator\EmailParser;
+use Olssonm\EmailAddress\EmailAddress as EmailAddressEmailAddress;
 use Olssonm\EmailAddress\Traits\PartsTrait;
 use Olssonm\EmailAddress\Entity\EmailAddress;
 use Olssonm\EmailAddress\Exceptions\InvalidEmailAddressException;
@@ -17,18 +19,23 @@ class Parser
 
     public function result(): EmailAddress
     {
-        $parseResults = Parse::getInstance()->parse($this->address, false);
+        $parser = new EmailParser(new EmailLexer());
+        $parser->parse($this->address);
 
-        if ($parseResults['invalid']) {
-            throw new InvalidEmailAddressException(sprintf('could not parse %s', $this->address), 0);
+        if (
+            !$parser->getLocalPart() ||
+            !$parser->getDomainPart() ||
+            EmailAddressEmailAddress::validate($this->address) === false
+        ) {
+            throw new InvalidEmailAddressException($this->address);
         }
 
         return new EmailAddress(
-            $parseResults['address'],
-            $parseResults['local_part'],
-            $this->getDelivery($parseResults['local_part']),
-            $this->getTag($parseResults['local_part']),
-            $parseResults['domain_part'],
+            $this->address,
+            $parser->getLocalPart(),
+            $this->getDelivery($parser->getLocalPart()),
+            $this->getTag($parser->getLocalPart()),
+            $parser->getDomainPart(),
         );
     }
 }

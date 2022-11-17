@@ -33,8 +33,10 @@ it('can parse subdomain address', function () {
 it('fails invalid address', function ($address) {
     EmailAddress::parse($address);
 })->with([
-    'abc.example.com',
+    'Abc.example.com',
     'A@b@c@example.com',
+    'i_like_underscore@but_its_not_allowed_in_this_part.example.com',
     'a"b(c)d,e:f;g<h>i[j\k]l@example.com',
-    'i_like_underscore@but_its_not_allowed_in_this_part.example.com'
+    'just"not"right@example.com',
+    'QA[icon]CHOCOLATE[icon]@test.com',
 ])->throws(InvalidEmailAddressException::class);
