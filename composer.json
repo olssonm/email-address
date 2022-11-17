@@ -11,8 +11,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": "^8",
-        "egulias/email-validator": "^3.2",
-        "mmucklo/email-parse": "dev-replace-punycode#c0d492b"
+        "egulias/email-validator": "^3.2"
     },
     "require-dev": {
         "pestphp/pest": "^1.0",
@@ -28,10 +27,6 @@
             "Olssonm\\EmailAddress\\Test\\": "tests/"
         }
     },
-    "repositories": [{
-        "type": "git",
-        "url": "https://github.com/olssonm/email-parse"
-    }],
     "scripts": {
         "test": "./vendor/bin/pest --no-coverage",
         "phpsniff": "vendor/bin/phpcs --standard=\"PSR12\" ./src --ignore=./src/resources/*",

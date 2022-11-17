@@ -32,7 +32,7 @@ class Builder
         return $this;
     }
 
-    public function local(string $local)
+    public function local(string $local): self
     {
         $this->local = $local;
         $this->delivery = $this->getDelivery($local);
@@ -40,25 +40,25 @@ class Builder
         return $this;
     }
 
-    public function delivery(string $delivery)
+    public function delivery(string $delivery): self
     {
         $this->delivery = $delivery;
         return $this;
     }
 
-    public function tag(mixed $tag)
+    public function tag(mixed $tag): self
     {
         $this->tag = $tag;
         return $this;
     }
 
-    public function domain(string $domain)
+    public function domain(string $domain): self
     {
         $this->domain = $domain;
         return $this;
     }
 
-    public function get()
+    public function get(): EmailAddress
     {
         return new EmailAddress(
             $this->buildAddress(),
@@ -69,12 +69,12 @@ class Builder
         );
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->get()->address;
     }
 
-    private function buildLocal()
+    private function buildLocal(): string
     {
         return sprintf(
             '%s%s',
@@ -83,7 +83,7 @@ class Builder
         );
     }
 
-    private function buildAddress()
+    private function buildAddress(): string
     {
         return sprintf(
             '%s@%s',
