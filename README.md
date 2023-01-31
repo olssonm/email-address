@@ -2,7 +2,7 @@
 
 [![Supported PHP-versions](https://img.shields.io/packagist/php-v/olssonm/email-address?style=flat-square)](https://packagist.org/packages/olssonm/email-address)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/olssonm/email-address.svg?style=flat-square)](https://packagist.org/packages/olssonm/email-address)
-[![Build Status](https://img.shields.io/github/workflow/status/olssonm/email-address/Run%20tests.svg?style=flat-square&label=tests)](https://github.com/olssonm/email-address/actions?query=workflow%3A%22Run+tests%22)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/olssonm/email-address/test.yml?branch=main&style=flat-square&label=tests)](https://github.com/olssonm/email-address/actions?query=workflow%3A%22Run+tests%22)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
 Simple package where you can extract all the parts of an email address. Among the use cases is the retrieval of the actual delivery-address for a subaddress (i.e. "plus addressing", "tagged addressing" etc.).
@@ -104,4 +104,4 @@ If an invalid e-mail address is parsed, an `Olssonm\EmailAddress\Exceptions\Inva
 
 The MIT License (MIT). Please see the [LICENSE](LICENSE) for more information.
 
-© 2022 [Marcus Olsson](https://marcusolsson.me).
+© 2023 [Marcus Olsson](https://marcusolsson.me).
