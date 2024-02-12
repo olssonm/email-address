@@ -8,8 +8,8 @@ class EmailAddress
         readonly string $address,
         readonly string $local,
         readonly string $delivery,
-        readonly string|null $tag = null,
-        readonly string $domain,
+        readonly ?string $tag = null,
+        readonly ?string $domain = null,
     ) {
         # code...
     }
