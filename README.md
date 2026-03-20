@@ -104,4 +104,4 @@ If an invalid e-mail address is parsed, an `Olssonm\EmailAddress\Exceptions\Inva
 
 The MIT License (MIT). Please see the [LICENSE](LICENSE) for more information.
 
-© 2023 [Marcus Olsson](https://marcusolsson.me).
+© 2026 [Marcus Olsson](https://marcusolsson.me).
